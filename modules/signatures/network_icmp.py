@@ -27,8 +27,6 @@ class NetworkICMP(Signature):
         if "network" in self.results:
             if "icmp" in self.results["network"]:
                 for icmp in self.results["network"]["icmp"]:
-                    # ignore dest unreachable
-                    if icmp["type"] != 3:
                         return True
 
         return False
